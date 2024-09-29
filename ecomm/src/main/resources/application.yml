@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_NAME}
+    password: ${DATABASE_PASSWORD}
+    access-mode: ${DATABASE_ACCESS_MODE}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        generate_statistics: true
+
+logging:
+  level:
+    org.hibernate.stat: DEBUG
+    org.springframework.data.jpa: DEBUG
+
