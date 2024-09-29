@@ -1,116 +1,87 @@
-# 🌟 Welcome to the E-Commerce Revolution! 🚀
 
-Step into the future of online shopping with our **E-Commerce Website**! This powerful platform is crafted to deliver a seamless and enjoyable shopping experience, allowing users to effortlessly browse products, manage their cart, and complete purchases in just a few clicks. Built with Java and Spring Boot, our application promises a robust backend and an intuitive user interface that will make shopping a breeze!
+# 🌐 E-Commerce Advanced
 
-## 🎉 Features That Wow
+Welcome to **E-Commerce Advanced**! This project is a state-of-the-art e-commerce platform designed for an effortless shopping experience for users and powerful management capabilities for administrators. Let’s revolutionize online shopping! 🚀
 
-- **User-Friendly Registration:** Easy sign-up and login for customers.
-- **Dynamic Product Browsing:** Explore a vast array of products with intuitive search and filtering options.
-- **Shopping Cart Management:** Add, edit, or remove items with ease.
-- **Secure Checkout Process:** Hassle-free and safe payment methods.
-- **Order History & Tracking:** Keep tabs on your past purchases and current orders.
-- **Admin Panel:** Manage products and users with a powerful backend interface.
+## ✨ Features
+- 📱 **Responsive Design**: Sleek and modern UI for both mobile and desktop devices.
+- 🛍️ **Product Management**: Add, edit, delete products with just a few clicks.
+- 🔐 **User Management**: Full control over users, orders, and activities via the admin dashboard.
+- 💳 **Payment Gateway Integration**: Smooth, secure, and reliable payment options for users.
+- 🗄️ **Database Access Modes**: Choose between `JPA` and other access modes.
 
-## 🛠 Getting Started
+## 🔥 Quick Start
 
-Ready to dive in? Here’s how to set up the project on your local machine:
+### 🚨 Prerequisites
+Ensure you have **Java 17** installed. Download it [here](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html).
 
-### 📋 Prerequisites
+### ⚙️ Setup Guide
 
-- Java 17
-- PostgreSQL database
-
-### Step 1: Install Java 17
-
-1. **Download Java 17** from the [official Oracle website](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html) or use a package manager like Homebrew for macOS:
+1. **Clone the repository**:
 
    ```bash
-   brew install openjdk@17
+   git clone https://github.com/shaan372/e-commerce-adv.git
    ```
 
-2. **Set the `JAVA_HOME` environment variable** (modify the path as needed):
+2. **Set environment variables**:
+
+   On **Windows**:
+   ```bash
+   set DATABASE_ACCESS_MODE=jpa
+   set DATABASE_NAME=postgres
+   set DATABASE_PASSWORD=root123
+   set DATABASE_URL=jdbc:postgresql://0.0.0.0:5432/ecom
+   ```
+
+   On **Linux/macOS**:
+   ```bash
+   export DATABASE_ACCESS_MODE=jpa
+   export DATABASE_NAME=postgres
+   export DATABASE_PASSWORD=root123
+   export DATABASE_URL=jdbc:postgresql://0.0.0.0:5432/ecom
+   ```
+
+3. **Build and run the project**:
 
    ```bash
-   export JAVA_HOME=/path/to/java17
+   ./mvnw spring-boot:run
    ```
 
-### Step 2: Configure Environment Variables
+### 📜 Environment Variables
 
-Boost your setup by adding these environment variables:
+| Variable Name           | Description                                      | Example Value                                      |
+|-------------------------|--------------------------------------------------|----------------------------------------------------|
+| `DATABASE_ACCESS_MODE`   | Defines the database access mode (e.g., `jpa`)   | jpa                                                |
+| `DATABASE_NAME`          | The name of the PostgreSQL database              | postgres                                           |
+| `DATABASE_PASSWORD`      | The password for the database                    | root123                                            |
+| `DATABASE_URL`           | The connection URL for PostgreSQL                | jdbc:postgresql://0.0.0.0:5432/ecom                |
 
-```bash
-export DATABASE_ACCESS_MODE=jpa
-export DATABASE_NAME=postgres
-export DATABASE_PASSWORD=root123
-export DATABASE_URL=jdbc:postgresql://0.0.0.0:5432/ecom
-```
+## 🤝 How to Contribute
 
-### Step 3: Clone the Repository
+We love contributions! Whether it’s a bug fix, feature request, or any improvement, feel free to help make **E-Commerce Advanced** even better.
 
-Bring the magic to your machine by cloning the repository:
+### Contributing Guide:
+1. **Fork the repo**
+2. **Create a new branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to your branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
 
-```bash
-git clone https://github.com/yourusername/ecommerce-website.git
-cd ecommerce-website
-```
+Your contributions make this project awesome! 🙌
 
-### Step 4: Run the Application
+## 📂 What's Inside
 
-Unleash the application using Maven:
+When you clone this repository, you’ll find these key directories and files:
 
-```bash
-./mvnw spring-boot:run
-```
+| File/Folder             | Description                                      |
+|------------------------ |--------------------------------------------------|
+| `src/`                  | Main source code for the e-commerce platform     |
+| `pom.xml`               | Maven build configuration file                   |
+| `README.md`             | This documentation                               |
+| `docker-compose.yml`    | Docker setup for easy local environment creation |
+| `.env`                  | Sample environment variables                     |
 
-## 🤝 Contributing: Let’s Build Together!
+## 🌟 Repository
 
-We love collaboration! If you’re eager to contribute, here’s how you can join the fun:
+Check out the official repository here: [E-Commerce Advanced](https://github.com/shaan372/e-commerce-adv.git) and don't forget to give us a ⭐ if you like the project!
 
-1. **Fork the Repository:** Click the “Fork” button in the top right corner of this page.
-
-2. **Clone Your Fork:** Pull your forked repository to your local machine:
-
-   ```bash
-   git clone https://github.com/yourusername/ecommerce-website.git
-   cd ecommerce-website
-   ```
-
-3. **Create a New Branch:** Start your journey with a new branch:
-
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-
-4. **Make Your Changes:** Dive into the code and bring your ideas to life!
-
-5. **Commit Your Changes:** Record your accomplishments with a clear message:
-
-   ```bash
-   git commit -m 'Add some feature'
-   ```
-
-6. **Push to Your Branch:** Share your changes with the world:
-
-   ```bash
-   git push origin feature/YourFeature
-   ```
-
-7. **Open a Pull Request:** Go to the original repository, click on “Pull Requests,” and create a new one to propose your changes.
-
-## 📦 What’s Inside?
-
-Here’s a sneak peek at what’s included in this project:
-
-- **Backend:** Java 17 with Spring Boot
-- **Database:** PostgreSQL
-- **Frontend:** [Insert frontend framework if applicable]
-- **Dependencies:** [List of key dependencies]
-- **Documentation:** Comprehensive guides for API endpoints and usage
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Thank you for exploring our E-Commerce Website! We’re excited to see how you contribute and make this project even better. Happy coding! 🎉
