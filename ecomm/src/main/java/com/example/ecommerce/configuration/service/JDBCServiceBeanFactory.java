@@ -11,7 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnProperty(name = "spring.datasource.access-mode", havingValue = "jdbc")
+@ConditionalOnProperty(name = "spring.datasource.access-mode",
+		havingValue = "jdbc")
 public class JDBCServiceBeanFactory {
 
 	@Bean
