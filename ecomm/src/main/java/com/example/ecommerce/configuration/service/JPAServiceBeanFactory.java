@@ -1,5 +1,8 @@
 package com.example.ecommerce.configuration.service;
 
+import com.example.ecommerce.repository.jpa.CategoryRepository;
+import com.example.ecommerce.repository.jpa.ProductRepository;
+import com.example.ecommerce.repository.jpa.UseCaseRepository;
 import com.example.ecommerce.service.CategoryService;
 import com.example.ecommerce.service.ProductService;
 import com.example.ecommerce.service.UseCaseService;
@@ -15,17 +18,20 @@ import org.springframework.context.annotation.Configuration;
 public class JPAServiceBeanFactory {
 
 	@Bean
-	public ProductService productServiceBeanProvide() {
-		return new ProductServiceV1();
+	public ProductService productServiceBeanProvide(
+			ProductRepository productRepository,
+			UseCaseService useCaseService,
+			CategoryService categoryService) {
+		return new ProductServiceV1(productRepository, useCaseService, categoryService);
 	}
 
 	@Bean
-	public CategoryService categoryServiceBeanProvider() {
-		return new CategoryServiceV1();
+	public CategoryService categoryServiceBeanProvider(CategoryRepository categoryRepository) {
+		return new CategoryServiceV1(categoryRepository);
 	}
 
 	@Bean
-	public UseCaseService useCaseServiceBeanProvider() {
-		return new UseCaseServiceV1();
+	public UseCaseService useCaseServiceBeanProvider(UseCaseRepository useCaseRepository) {
+		return new UseCaseServiceV1(useCaseRepository);
 	}
 }

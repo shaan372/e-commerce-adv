@@ -12,17 +12,19 @@ import jakarta.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.StreamSupport;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Slf4j
+@RequiredArgsConstructor
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class ProductServiceV1 implements ProductService {
 
-	@Autowired private ProductRepository productRepository;
-
-	@Autowired private UseCaseService useCaseService;
-
-	@Autowired private CategoryService categoryService;
+	ProductRepository productRepository;
+	UseCaseService useCaseService;
+	CategoryService categoryService;
 
 	@Override
 	public List<Product> findAllProducts() {

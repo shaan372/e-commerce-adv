@@ -6,13 +6,17 @@ import com.example.ecommerce.repository.jpa.CategoryRepository;
 import com.example.ecommerce.service.CategoryService;
 import java.util.List;
 import java.util.stream.StreamSupport;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Slf4j
+@RequiredArgsConstructor
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class CategoryServiceV1 implements CategoryService {
 
-	@Autowired private CategoryRepository categoryRepository;
+	CategoryRepository categoryRepository;
 
 	@Override
 	public List<Category> findAllCategories() {
@@ -24,8 +28,7 @@ public class CategoryServiceV1 implements CategoryService {
 
 	@Override
 	public Category findCategoryById(Integer id) {
-		Category category = categoryRepository.findById(id).orElse(null);
-		return category;
+        return categoryRepository.findById(id).orElse(null);
 	}
 
 	@Override
